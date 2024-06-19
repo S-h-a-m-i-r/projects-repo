@@ -1,0 +1,11 @@
+<div class = 'd-flex align-items-center justify-content-center'>
+<h1> 
+    welcome to the home page testing on ruby on rails   </h1>
+ </div>
+   <% if @user %>
+  Logged in as: <%= @user.email %>
+  <%= link_to 'log_out', log_out_path, method: :delete %>
+  <div class ='mb-3 btn btn-primary'> 
+  <%= button_to 'Log Out', log_out_path, method: :delete %>
+  </div>
+   <% end %>
