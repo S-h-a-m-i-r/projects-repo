@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<%
+=begin%>
+ <h1>Posts</h1>
+
+<%= turbo_frame_tag "posts" do %>
+  <%= render @posts %>
+<% end %> 
+<%
+=end%>
+
+<div id = "count">  apple counter </div>
+<%= turbo_frame_tag "count" do %>
+  <%= @count %>
+
+<div> 
+ <%= button_to 'Add', add_counter_path, method: :post, form: { data: { turbo_frame: "count" } } %>
+  <%= button_to 'Remove', remove_counter_path, method: :post, form: { data: { turbo_frame: "count" } } %>
+
+</div>
+
+<div>  this is log of added apples
+</div>
+
+<%
+=begin%>
+ <%= link_to 'New Post', new_post_path %> 
+<%
+=end%>

@@ -1,0 +1,476 @@
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-06-02 11:56:18.714544', '2024-06-02 11:56:18.714552') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20240602115603)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240602115603') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-06-02 16:57:30 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering c:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered c:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 376)
+Completed 200 OK in 386ms (Views: 95.6ms | ActiveRecord: 0.0ms | Allocations: 8787)
+
+
+Started GET "/" for ::1 at 2024-06-02 17:00:39 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering c:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered c:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.1ms | Allocations: 376)
+Completed 200 OK in 63ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 4829)
+
+
+Started GET "/posts" for ::1 at 2024-06-02 17:00:44 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 29)
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 2272)
+  Rendered layout layouts/application.html.erb (Duration: 1333.6ms | Allocations: 81021)
+Completed 200 OK in 1550ms (Views: 1340.1ms | ActiveRecord: 6.0ms | Allocations: 91786)
+
+
+Started GET "/" for ::1 at 2024-06-02 17:01:14 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 12)
+  Rendered posts/index.html.erb within layouts/application (Duration: 142.9ms | Allocations: 4750)
+  Rendered layout layouts/application.html.erb (Duration: 163.4ms | Allocations: 6732)
+Completed 200 OK in 182ms (Views: 167.5ms | ActiveRecord: 7.3ms | Allocations: 8328)
+
+
+Started GET "/" for ::1 at 2024-06-02 17:01:18 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 10)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1245)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 2956)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.1ms | Allocations: 3220)
+
+
+Started GET "/" for ::1 at 2024-06-02 17:01:20 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 10)
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1239)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 2949)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.3ms | Allocations: 3209)
+
+
+Started GET "/posts/new" for ::1 at 2024-06-02 17:01:21 +0500
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 90.2ms | Allocations: 3441)
+  Rendered posts/new.html.erb within layouts/application (Duration: 143.2ms | Allocations: 3748)
+  Rendered layout layouts/application.html.erb (Duration: 153.1ms | Allocations: 5457)
+Completed 200 OK in 242ms (Views: 154.6ms | ActiveRecord: 0.6ms | Allocations: 14847)
+
+
+Started POST "/posts" for ::1 at 2024-06-02 17:01:27 +0500
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"dsfsjf", "body"=>"kdlsjfsadk"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mPost Create (2.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "dsfsjf"], ["body", "kdlsjfsadk"], ["created_at", "2024-06-02 12:01:27.528557"], ["updated_at", "2024-06-02 12:01:27.528557"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 15ms (ActiveRecord: 5.2ms | Allocations: 3945)
+
+
+Started GET "/posts/1" for ::1 at 2024-06-02 17:01:27 +0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 316)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 2771)
+Completed 200 OK in 75ms (Views: 16.5ms | ActiveRecord: 0.3ms | Allocations: 5779)
+
+
+Started GET "/posts/1" for ::1 at 2024-06-02 17:01:32 +0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 96)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2543)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.1ms | Allocations: 3160)
+
+
+Started GET "/" for ::1 at 2024-06-02 17:01:37 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of posts/_post.html.erb [1 times] (Duration: 1.9ms | Allocations: 196)
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1642)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 3352)
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.1ms | Allocations: 3612)
+
+
+Started GET "/posts/new" for ::1 at 2024-06-02 17:01:43 +0500
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.3ms | Allocations: 1294)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1373)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 3082)
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 3344)
+
+
+Started GET "/posts" for ::1 at 2024-06-02 17:01:45 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of posts/_post.html.erb [1 times] (Duration: 0.1ms | Allocations: 27)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1325)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 3036)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.1ms | Allocations: 3296)
+
+
+Started GET "/posts/new" for ::1 at 2024-06-02 17:01:47 +0500
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.8ms | Allocations: 1287)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1366)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3075)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 3337)
+
+
+Started POST "/posts" for ::1 at 2024-06-02 17:01:53 +0500
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sdfsd", "body"=>"sdfsd"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mPost Create (2.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "sdfsd"], ["body", "sdfsd"], ["created_at", "2024-06-02 12:01:53.680381"], ["updated_at", "2024-06-02 12:01:53.680381"]]
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 10ms (ActiveRecord: 3.0ms | Allocations: 2347)
+
+
+Started GET "/posts/2" for ::1 at 2024-06-02 17:01:53 +0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 96)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 2529)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.1ms | Allocations: 3131)
+
+
+Started GET "/posts" for ::1 at 2024-06-02 17:01:56 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of posts/_post.html.erb [2 times] (Duration: 0.1ms | Allocations: 44)
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1368)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 3078)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.1ms | Allocations: 3338)
+
+
+Started GET "/posts/new" for ::1 at 2024-06-02 17:02:02 +0500
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.4ms | Allocations: 1285)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1364)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 3073)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 3335)
+
+
+Started GET "/" for ::1 at 2024-06-02 18:04:42 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 100.4ms | Allocations: 6386)
+  Rendered layout layouts/application.html.erb (Duration: 101.6ms | Allocations: 6506)
+Completed 500 Internal Server Error in 447ms (ActiveRecord: 0.0ms | Allocations: 24759)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `counter' for #<ActionView::Base:0x0000000000b2e8>):
+     9: <% end %> 
+    10: <%
+    11: =end%>
+    12: <div> <%= apple counter %></div>
+    13: 
+    14: <div> 
+    15: <%= add %>
+  
+app/views/posts/index.html.erb:12
+Started GET "/" for ::1 at 2024-06-02 18:06:16 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1936)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2022)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms | Allocations: 3597)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `apple' for #<ActionView::Base:0x0000000000eee8>):
+    10: <%
+    11: =end%>
+    12: 
+    13: <div> <%= apple %> </div>
+    14: 
+    15: <div> 
+    16: <%= add %>
+  
+app/views/posts/index.html.erb:13
+Started GET "/" for ::1 at 2024-06-02 18:06:23 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1975)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2061)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms | Allocations: 3632)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `add' for #<ActionView::Base:0x00000000012a70>):
+    12: 
+    13: 
+    14: <div> 
+    15: <%= add %>
+    16: <%= remove %>
+    17: </div>
+    18: 
+  
+app/views/posts/index.html.erb:15
+Started GET "/" for ::1 at 2024-06-02 18:06:30 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1075)
+  Rendered layout layouts/application.html.erb (Duration: 963.2ms | Allocations: 78644)
+Completed 500 Internal Server Error in 996ms (ActiveRecord: 0.0ms | Allocations: 80215)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/hp/Desktop/rails_practice/hotwire_crud_app/tmp/cache/assets/sprockets/v4.0.0/QT/QTfN5K60yxQxuy7EEZ2i0EQ2ha_LMarwbrs-uStBnNs.cache.46100.17884.952532, C:/Users/hp/Desktop/rails_practice/hotwire_crud_app/tmp/cache/assets/sprockets/v4.0.0/QT/QTfN5K60yxQxuy7EEZ2i0EQ2ha_LMarwbrs-uStBnNs.cache)):
+  
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:93:in `fetch'
+sprockets (4.2.1) lib/sprockets/base.rb:71:in `file_digest'
+sprockets (4.2.1) lib/sprockets.rb:213:in `block in <module:Sprockets>'
+sprockets (4.2.1) lib/sprockets/dependencies.rb:68:in `resolve_dependency'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:54:in `block in resolve_dependency'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:54:in `resolve_dependency'
+sprockets (4.2.1) lib/sprockets/loader.rb:290:in `block in resolve_dependencies'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each_key'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each'
+sprockets (4.2.1) lib/sprockets/loader.rb:290:in `map'
+sprockets (4.2.1) lib/sprockets/loader.rb:290:in `resolve_dependencies'
+sprockets (4.2.1) lib/sprockets/loader.rb:222:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.3.1) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/" for ::1 at 2024-06-02 18:06:53 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered collection of posts/_post.html.erb [2 times] (Duration: 0.5ms | Allocations: 265)
+  Rendered posts/index.html.erb within layouts/application (Duration: 51.8ms | Allocations: 11611)
+  Rendered layout layouts/application.html.erb (Duration: 125.9ms | Allocations: 33774)
+Completed 200 OK in 136ms (Views: 128.5ms | ActiveRecord: 1.8ms | Allocations: 35407)
+
+
+Started GET "/" for ::1 at 2024-06-02 18:07:50 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1880)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1966)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 3538)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `apples' for #<ActionView::Base:0x0000000001dec0>):
+    18: 
+    19: </div>
+    20: 
+    21: <div> <%= this is log of added apples%>
+    22: </div>
+    23: <%= link_to 'New Post', new_post_path %>
+  
+app/views/posts/index.html.erb:21
+Started GET "/" for ::1 at 2024-06-02 18:08:03 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 987)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2977)
+Completed 200 OK in 32ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4569)
+
+
+Started GET "/" for ::1 at 2024-06-02 18:08:16 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 958)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 2950)
+Completed 200 OK in 67ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 4539)
+
+
+Started GET "/" for ::1 at 2024-06-02 18:12:31 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 256)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 2252)
+Completed 200 OK in 60ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 4585)
+
+
+Started GET "/" for ::1 at 2024-06-02 23:01:06 +0500
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1253)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 1347)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.0ms | Allocations: 3701)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<%
+=begin%>
+ <h1>Posts</h1>
+
+<%= turbo_frame_tag "posts" do %>
+  <%= render @posts %>
+<% end %> 
+<%
+=end%>
+
+<div id = "count">  apple counter </div>
+<%= turbo_frame_tag "count" do %>
+  <%= @count %>
+
+<div> 
+<button> add </button>
+<button> remove </button>
+
+</div>
+
+<div>  this is log of added apples
+</div>
+
+<%
+=begin%>
+ <%= link_to 'New Post', new_post_path %> 
+<%
+=end%>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <%
+4:    =begin%>
+5:     <h1>Posts</h1>
+6:    
+7:    <%= turbo_frame_tag "posts" do %>
+8:      <%= render @posts %>
+9:    <% end %> 
+10:    <%
+11:    =end%>
+12:    
+13:    <div id = "count">  apple counter </div>
+14:    <%= turbo_frame_tag "count" do %>
+15:      <%= @count %>
+16:    
+17:    <div> 
+18:    <button> add </button>
+19:    <button> remove </button>
+20:    
+21:    </div>
+22:    
+23:    <div>  this is log of added apples
+24:    </div>
+25:    
+26:    <%
+27:    =begin%>
+28:     <%= link_to 'New Post', new_post_path %> 
+29:    <%
+30:    =end%>
+  
+app/views/posts/index.html.erb:32: syntax error, unexpected end-of-input
