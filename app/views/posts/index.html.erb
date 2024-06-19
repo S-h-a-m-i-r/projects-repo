@@ -1,0 +1,39 @@
+
+<div class='container'> 
+<h1>Posts</h1>
+
+<% if current_user.present?%>
+<%= link_to "New post", new_post_path, class: "btn btn-success" %>
+<%end%>
+
+
+
+<% if current_user %>
+  <h2>Total Posts By: <%= current_user.name%></h2>
+  <% @posts.each do |post| %>
+    <% if post.user_id == current_user.id %>
+      <%= render post %>
+     <%= link_to "Show this post", post, class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+<% else %>
+  <!-- Show nothing -->
+<% end %>
+
+<h2>Total Posts</h2>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <p>
+  <%= link_to "Show this post", post, class: "btn btn-primary" %>
+</p>
+  <% end %>
+</div>
+
+
+
+
+
+</div>
+

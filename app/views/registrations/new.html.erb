@@ -1,0 +1,32 @@
+<%= form_with model: @user, url: signup_path do |form| %> 
+  <div class="container">
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger">
+        <h4 class="alert-heading">Whoops! We found <%= pluralize(@user.errors.count, "error") %>:</h4>
+        <ul>
+          <% @user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="card mt-5 shadow-sm bg-light ">
+      <div class="card-body">
+        <h1 class="card-title mb-4 d-flex justify-content-center">Sign Up Form</h1>
+        <div class="mb-3">
+          <%= form.text_field :name, placeholder: "Enter your name", class: 'form-control shadow-sm bg-light  ' %>
+        </div>
+        <div class="mb-3">
+          <%= form.password_field :password, placeholder: "Enter your password", class: 'form-control shadow-sm bg-light' %>
+        </div>
+        <div class="mb-3">
+          <%= form.password_field :password_confirmation, placeholder: "Confirm password", class: 'form-control shadow-sm bg-light' %>
+        </div>
+        <div class="mb-3 d-flex justify-content-center">
+          <%= form.submit "Sign Up", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    </div>
+  </div> 
+<% end %>

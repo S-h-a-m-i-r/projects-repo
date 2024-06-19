@@ -1,0 +1,12 @@
+<div class="comment-card">
+  <article class="border rounded p-3 mb-3 shadow-sm bg-light">
+    <p class="mb-1"><%= comment.body %></p>
+    <p class="text-muted small mb-0">by <%= comment.user.name %></p>
+    <% if current_user.id == comment.user.id %>
+      <div class="btn-group mt-2" role="group" aria-label="Comment Actions">
+        <%= button_to "Delete", post_comment_path(comment.post, comment), method: :delete, class: "btn btn-danger btn-sm" %>
+        <%= link_to "Edit", edit_post_comment_path(comment.post, comment), class: "btn btn-primary btn-sm mx-2" %>
+      </div>
+    <% end %>
+  </article>
+</div>

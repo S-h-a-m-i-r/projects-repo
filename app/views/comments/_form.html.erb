@@ -1,0 +1,12 @@
+<%= form_with(model: [post, comment], url: post_comments_path(post), class: "needs-validation", novalidate: true) do |form| %>
+  <div class="mb-3">
+    <%= form.text_area :body, class: "form-control", rows: 2, placeholder: "Enter your comment here...", required: true %>
+    <div class="invalid-feedback">
+      Please enter your comment.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
